@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+  <title>Web Bán Vé Xem Phim Chất Lượng</title>
+  <meta charset="utf-8"/>
+
+  <% include ./layout/header %>
+
+</head> 
+<body>
+    <div class="Khung"></div>
+
+     <div id="header">
+    <nav class="navbar navbar-fixed-top navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="/" class="navbar-brand"><img src="/static/images/images.png" style="width:120px; height: 40px;">
+                </a>
+
+            </div>
+            <div class="navbar-collapse collpase" id="main-menu">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/" class="hvr-underline-form-center">Trang Chủ</a>
+                    </li>
+                    <li>
+                        <a href="#" data-toggle="dropdown">Danh Sách Phim<span class="caret"></span></a>
+                    </li>
+                    <li>
+                        <a href="#">Mua Vé</a>
+                    </li>
+                    <li>
+                        <a href="#">Liên Hệ</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right" >
+                    <li>
+                        <a href="/user/signup" class="navbar-btn navbar-right btn_dn"> Đăng ký </a>
+                    </li>
+
+                    <% if(data) { %>
+
+
+                        <li>
+                            <a href="/user/edit" class="navbar-btn navbar-right btn_dn"> <%= data %> </a>
+                        </li>
+
+                    <% } else { %>
+
+                        <li>
+                            <a href="/login" class="navbar-btn navbar-right btn_dn"> Đăng Nhập </a>
+                        </li>
+
+                    <% } %> 
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+
+    <div class="modal-dialog text-center">
+      <div class="col-sm-9 main-section">
+        <div class="modal-content">
+
+          <div class="col-12 user-img">
+            <img src="/static/images/face.png">
+          </div>
+
+          <div class="col-12 form-input">
+
+            <% if(data && data.error){ %>
+
+            <p> <%= data.error %> </p>
+
+            <% } %>
+            {{msg}}
+
+            <form action="/user/signup" method="POST" action="send">
+              <div class="form-group">
+                <input type="text" name="username" class="form-control" placeholder="Họ Tên">
+              </div>
+              <div class="form-group">
+                <input type="email" name="email" class="form-control" placeholder="Email">
+              </div>
+              <div class="form-group">
+                <input type="text" name="sdt" class="form-control" placeholder="Số Điện Thoại">
+              </div>
+              <div class="form-group">
+                <input type="password" name="password" class="form-control" placeholder="Mật Khẩu">
+              </div>
+              <div class="form-group">
+                <input type="password" name="confirmpassword" class="form-control" placeholder="Nhập Lại Mật Khẩu">
+              </div>
+              <button type="submit" class="btn btn-success">Sigup</button>
+            </form>
+
+          </div>
+        </div>
+        <div class="col-12 forgot">
+          <a href="/Forgot-Password">Forgot Password?</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  
+  <% include ./layout/footer %>
+
+</body>
+</html> 

@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+<head>
+	<title>Web Bán Vé Xem Phim Chất Lượng</title>
+	<meta charset="utf-8"/>
+	<% include ./layout/header %>   
+</head> 
+<body>
+	<div id="header">
+		<nav class="navbar navbar-fixed-top navbar-inverse">
+			<div class="container">
+				<div class="navbar-header">
+					<a href="" class="navbar-brand"><img src="/static/images/images.png" style="width:120px; height: 40px;">
+					</a>
+
+				</div>
+				<div class="navbar-collapse collpase" id="main-menu">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="/" class="hvr-underline-form-center">Trang Chủ</a>
+            </li>
+            <li>
+              <a href="#" data-toggle="dropdown">Danh Sách Phim<span class="caret"></span></a>
+            </li>
+            <li>
+              <a href="#">Mua Vé</a>
+            </li>
+            <li>
+              <a href="#">Liên Hệ</a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right" >
+            <% if(data) { %>
+            <li>
+              <a href="" class="navbar-btn navbar-right btn_dn">  Thoát </a>
+            </li>
+            <% } else { %>
+            <li>
+              <a href="/user/signup" class="navbar-btn navbar-right btn_dn">  Đăng ký </a>
+            </li>
+            <% } %> 
+
+            <% if(data) { %>
+
+
+            <li>
+              <a href="/user/edit" class="navbar-btn navbar-right btn_dn"> <%= data %> </a>
+            </li>
+
+            <% } else { %>
+
+            <li>
+              <a href="/login" class="navbar-btn navbar-right btn_dn"> Đăng Nhập </a>
+            </li>
+
+            <% } %>  
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <tbody>
+   <div class="page-title">
+    <h1>Thông Tin Tài Khoản</h1>			
+  </div>
+  <div class="container" style="padding-top: 60px;">
+    <h1 class="page-header">Edit Profile</h1>
+    <div class="row">
+      <!-- left column -->
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="text-center">
+          <img src="https://cdn.pixabay.com/photo/2016/03/31/17/33/account-1293744_960_720.png" class="avatar img-circle img-thumbnail" alt="avatar">
+          <h6>Upload a different photo...</h6>
+          <input type="file" class="text-center center-block well well-sm">
+        </div>
+      </div>
+      <!-- edit form column -->
+      <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
+        <div class="alert alert-info alert-dismissable">
+          <a class="panel-close close" data-dismiss="alert">×</a> 
+          <i class="fa fa-coffee"></i>
+          <strong></strong>Bạn có thể chỉnh sửa thông tin cá nhân của mình tại đây
+        </div>
+        <h3>Personal info</h3>
+        <form class="form-horizontal" role="form">
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Name</label>
+            <div class="col-lg-8">
+              <input class="form-control" value="Trọng Minh" type="text">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Email:</label>
+            <div class="col-lg-8">
+              <input class="form-control" value="minhshinchi98@gmail.com" type="text">
+            </div> 
+          </div>       
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Phone</label>
+            <div class="col-lg-8">
+              <input class="form-control" value="123456789" type="text">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Password:</label>
+            <div class="col-md-8">
+              <input class="form-control" value="" type="password">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Confirm password:</label>
+            <div class="col-md-8">
+              <input class="form-control" value="" type="password">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label"></label>
+            <div class="col-md-8">
+              <input class="btn btn-primary" value="Save Changes" type="button">
+              <span></span>
+              <input class="btn btn-default" value="Cancel" type="reset">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</tbody>
+<% include ./layout/header %>
+</body>
+</html>      

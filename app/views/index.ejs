@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+<head>
+    <title> <%= title %> </title>
+    
+    <% include ./layout/header %>
+
+</head> 
+<body>
+    <div id ="wrapper">
+        <div class="Khung"></div>
+        
+        <div id="header">
+            <nav class="navbar navbar-fixed-top navbar-inverse">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a href="/" class="navbar-brand"><img src="/static/images/images.png" style="width:120px; height: 40px;">
+                        </a>
+
+                    </div>
+                    <div class="navbar-collapse collpase" id="main-menu">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a href="/" class="hvr-underline-form-center">Trang Chủ</a>
+                            </li>
+                            <li>
+                                <a href="#" data-toggle="dropdown">Danh Sách Phim<span class="caret"></span></a>
+                            </li>
+                            <li>
+                                <a href="#">Mua Vé</a>
+                            </li>
+                            <li>
+                                <a href="#">Liên Hệ</a>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right" >
+                           <% if(data) { %>
+                           <li>
+                            <a href="/login" class="navbar-btn navbar-right btn_dn"> Thoát </a>
+                        </li>
+
+                        <% } else { %>
+                        <li>
+                            <a href="/user/signup" class="navbar-btn navbar-right btn_dn"> Đăng ký </a>
+                        </li>
+                        <% } %> 
+
+                        <% if(data) { %>
+
+
+                        <li>
+                            <a href="/user/edit" class="navbar-btn navbar-right btn_dn"> <%= data %> </a>
+                        </li>
+
+                        <% } else { %>
+
+                        <li>
+                            <a href="/login" class="navbar-btn navbar-right btn_dn"> Đăng Nhập </a>
+                        </li>
+
+                        <% } %> 
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="walpper"></div>
+    
+    <center><h1>Phim Đang Chiếu</h1></center>
+
+    <div class="PhimNow"> 
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <figure class="images-PhimNow">
+                        <img src="/static/images/aladdin.jpg"/>
+                        <a href="#">
+                            <figcaption class="hvr-float-shadow">
+                                <a href=""> Đặt Vé</a>
+                            </figcaption>
+                        </a>
+                    </figure>
+                </div>
+                <div class="col-md-2">
+                    <figure class="images-PhimNow">
+                        <img src="/static/images/johnwick.jpg"/>
+                        <a href="#">
+                            <figcaption class="hvr-float-shadow">
+                                <a href=""> Đặt Vé</a>
+                            </figcaption>
+                        </a>
+                    </figure>
+                </div>
+                <div class="col-md-2">
+                    <figure class="images-PhimNow">
+                        <img src="/static/images/xmen.jpg"/>
+                        <a href="#">
+                            <figcaption class="hvr-float-shadow">
+                               <a href=""> Đặt Vé</a>
+                           </figcaption>
+                       </a>
+                   </figure>
+               </div>
+               <div class="col-md-2">
+                   <figure class="images-PhimNow">
+                    <img src="/static/images/pets2.jpg"/>
+                    <a href="#">
+                        <figcaption class="hvr-float-shadow">
+                            <a href=""> Đặt Vé</a>
+                        </figcaption>
+                    </a>
+                </figure>
+            </div>
+            <div class="col-md-2">
+                <figure class="images-PhimNow">
+                    <img src="/static/images/Godzilla.jpg"/>
+                    <a href="#">
+                        <figcaption class="hvr-float-shadow">
+                            <a href=""> Đặt Vé</a>
+                        </figcaption>
+                    </a>
+                </figure>   
+            </div>
+        </div>
+        
+        <div class="row">
+            <center><h1>Phim Xem Nhiều</h1></center>
+            <div class="col-md-2">
+                <figure class="images-PhimNow">
+                    <img src="/static/images/endgame.jpg"/>
+                    <a href="#">
+                        <figcaption class="hvr-float-shadow">
+                           <a href=""> Đặt Vé</a>
+                       </figcaption>
+                   </a>
+               </figure>
+           </div>
+           <div class="col-md-2">
+               <figure class="images-PhimNow">
+                <img src="/static/images/captainmv.jpg"/>
+                <a href="#">
+                    <figcaption class="hvr-float-shadow">
+                        <a href=""> Đặt Vé</a>
+                    </figcaption>
+                </a>
+            </figure>
+        </div>
+        <div class="col-md-2">
+            <figure class="images-PhimNow">
+                <img src="/static/images/Inf.jpg"/>
+                <a href="#">
+                    <figcaption class="hvr-float-shadow">
+                        <a href=""> Đặt Vé</a>
+                    </figcaption>
+                </a>
+            </figure>   
+        </div>
+        <div class="col-md-2">
+            <figure class="images-PhimNow">
+                <img src="/static/images/us.jpg"/>
+                <a href="#">
+                    <figcaption class="hvr-float-shadow">
+                        <a href=""> Đặt Vé</a>
+                    </figcaption>
+                </a>
+            </figure>   
+        </div>
+    </div>
+</div>     
+</div>       
+</div> 
+
+<% include ./layout/footer %>
+
+</body>
+</html>           
