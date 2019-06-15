@@ -188,3 +188,43 @@ header{
 .forgot a {
 	color: #daf1ff;
 }
+.block-wrapper {
+    position: relative;
+    padding: 2px;
+    background: #4F4E52 url(../img/item_bg.gif) repeat;
+    border-bottom: 1px solid #868489;
+    color: #ddd;
+    height: auto;
+    display: block;
+}
+.movie-item .movie-meta {
+    margin: 5px 5px;
+}
+.movie-item .movie-meta .movie-title-1 {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    color: #44e2ff;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+}
+.movie-item .movie-meta .movie-title-2 {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    line-height: normal;
+    color: #ccc;
+    font-size: 12px;
+    text-decoration: none;
+    padding-top: 4px;
+}
+.row {
+    margin-right: -10px;
+    margin-left: -10px;
+}

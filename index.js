@@ -24,29 +24,6 @@ app.use(session({
   cookie: { maxAge: 30 * 24 * 60 * 60 * 1000 } // có thể save được dữ liệu khác vào
 }))
 
-
-
-// app.use(function (req, res, next) {
-// 	if (!req.session.views) {
-// 		req.session.views = {}
-// 	}
-
-//   // get the url pathname
-//   var username = parseurl(req).username
-
-//   // count the views
-//   req.session.views[username] = (req.session.views[username] || 0) + 1
-
-//   next()
-// })
-
-// app.get('/login', function (req, res, next) {
-// 	res.send('you viewed this page ' + req.session.views['/login'] + ' times')
-// })
-
-// app.get('/edit', function (req, res, next) {
-// 	res.send('you viewed this page ' + req.session.views['/edit'] + ' times')
-// })
 //! cấu hình static folder public
 app.use("/static", express.static(__dirname + "/public"));
 

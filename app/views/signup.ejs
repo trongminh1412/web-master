@@ -34,15 +34,11 @@
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right" >
-                    <li>
-                        <a href="/user/signup" class="navbar-btn navbar-right btn_dn"> Đăng ký </a>
-                    </li>
-
                     <% if(data) { %>
 
 
                         <li>
-                            <a href="/user/edit" class="navbar-btn navbar-right btn_dn"> <%= data %> </a>
+                            <a href="/edit" class="navbar-btn navbar-right btn_dn"> <%= data %> </a>
                         </li>
 
                     <% } else { %>
@@ -52,6 +48,10 @@
                         </li>
 
                     <% } %> 
+
+                    <li>
+                        <a href="/user/signup" class="navbar-btn navbar-right btn_dn"> Đăng ký </a>
+                    </li>
 
                 </ul>
             </div>

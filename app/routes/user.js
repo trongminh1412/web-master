@@ -42,7 +42,7 @@ router.post("/signup", function(req, res){
 
     })
 
-    res.redirect("/");
+    res.redirect("/login");
 
 
     const output= `
@@ -86,28 +86,5 @@ router.post("/signup", function(req, res){
         process.exit(1);
     })
 })
-
-// ============= EDIT USER
-router.get("/edit", function(req, res){
-    res.render("edit", { data: "" });
-})
-
-// router.get("/edit", function(req, res){
-//     pool.connect(function(err, client, done){
-//         if(err){
-//             return console.error('error',err);
-//         }
-//         client.query('select * from QuanLy' ['1'],function(err,result){
-//             done();
-//             if(err){
-//                 res.end();
-//                 return console.error('error',err);
-//             }
-//             res.render("login",{data:result});
-//         });
-//     });
-    
-// })
-
 
 module.exports = router;

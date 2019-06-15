@@ -33,3 +33,6 @@ const getUserByEmail =  function (email){
 
 module.exports.pool = pool;
 module.exports.getUserByEmail = getUserByEmail;
+
+
+
