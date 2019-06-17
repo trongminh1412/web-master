@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="with=device-with,initial-scale=1"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Upload File</title>
+</head>
+<body>
+
+    <div class="jumbotron">
+        <h1 class="display-3">Jumbo heading</h1>
+        <p class="lead">Jumbo helper text</p>
+        <hr class="my-2">
+        <p>More info</p>
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="Jumbo action link" role="button">Jumbo action name</a>
+        </p>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-md-12">
+
+                <form action="/upload" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="">Nhập Tên Phim</label>
+                        <input type="text" class="form-control" name="name_movie" id="" aria-describedby="helpId" placeholder="">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Ngày Phát Hành</label>
+                        <input type="text" class="form-control" name="publish_date" id="" aria-describedby="helpId" placeholder="">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Thời Lượng</label>
+                        <input type="text" class="form-control" name="duration" id="" aria-describedby="helpId" placeholder="">
+                    </div>
+    
+                    <div class="input-group ">
+                        <input name="poster_image" type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                        <label class="custom-file-label" for="inputGroupFile01">Chọn Hình Ảnh</label>
+                    </div>
+
+                    <div class="input-group mt-4">
+                        <button class="btn btn-danger btn-block">Thêm Phim</button>
+                    </div>
+                    
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -14,7 +14,7 @@
     <nav class="navbar navbar-fixed-top navbar-inverse">
         <div class="container">
             <div class="navbar-header">
-                <a href="/" class="navbar-brand"><img src="/static/images/images.png" style="width:120px; height: 40px;">
+                <a href="/" class="navbar-brand"><img src="/public/images/images.png" style="width:120px; height: 40px;">
                 </a>
 
             </div>
@@ -65,7 +65,7 @@
         <div class="modal-content">
 
           <div class="col-12 user-img">
-            <img src="/static/images/face.png">
+            <img src="/public/images/face.png">
           </div>
 
           <div class="col-12 form-input">
@@ -75,7 +75,6 @@
             <p> <%= data.error %> </p>
 
             <% } %>
-            {{msg}}
 
             <form action="/user/signup" method="POST" action="send">
               <div class="form-group">
@@ -97,9 +96,6 @@
             </form>
 
           </div>
-        </div>
-        <div class="col-12 forgot">
-          <a href="/Forgot-Password">Forgot Password?</a>
         </div>
 
       </div>

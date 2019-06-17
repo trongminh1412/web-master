@@ -1,21 +1,20 @@
-   <!doctype html>
+<!doctype html>
 <html>
 <head>
-    <title>Web Bán Vé Xem Phim Chất Lượng</title>
-    <meta charset="utf-8"/>
+    <title> Upload and remove file </title>
     
     <% include ./layout/header %>
 
 </head> 
 <body>
-  <div class="Khung"></div>
-
- 
-  <div id="header">
+    <div id ="wrapper">
+        <div class="Khung"></div>
+        
+        <div id="header">
     <nav class="navbar navbar-fixed-top navbar-inverse">
         <div class="container">
             <div class="navbar-header">
-                <a href="/" class="navbar-brand"><img src="/public/images/images.png" style="width:120px; height: 40px;">
+                <a href="/" class="navbar-brand"><img src="/static/images/images.png" style="width:120px; height: 40px;">
                 </a>
 
             </div>
@@ -70,47 +69,7 @@
     </nav>
 </div>
 
-
-
-  <div class="modal-dialog text-center">
-    <div class="col-sm-9 main-section">
-      <div class="modal-content">
-
-        <div class="col-12 user-img">
-          <img src="/public/images/face.png">
-        </div>
-
-        <div class="col-12 form-input">
-
-          <% if(error){ %>
-              <p class="text-danger"><%= error %></p>
-          <% } %>
-
-          <form action="/login" method="POST">
-            <div class="form-group">
-              <input type="email" name="email" class="form-control" placeholder="Enter Email">
-            </div>
-
-            <div class="form-group">
-              <input type="password" name="password" class="form-control" placeholder="Enter Password">
-            </div>
-
-            <button type="submit" class="btn btn-success">Login</button>
-            <button type="submit" class="btn btn-success">Login Facebook</button>
-            <button type="submit" class="btn btn-success">Login Google</button>
-          </form>
-
-        </div>
-
-        <div class="col-12 forgot">
-          <a href="/user/forgot">Forgot Password?</a>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <% include ./layout/footer %> 
-
+    <% include ./layout/footer %>
+    
 </body>
-</html>
+</html>           

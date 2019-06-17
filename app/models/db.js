@@ -29,7 +29,24 @@ const getUserByEmail =  function (email){
   }
   return false;
 }
+// lấy thông tin user
+const getUser =  function (user){
+  if(user){
+      var defer = q.defer();
 
+      pool.query('SELECT * FROM public."user" WHERE id = $1', [user], (err, dulieu) => {
+          if(err){
+              defer.reject(err);
+
+          }else{
+
+              defer.resolve(dulieu);
+          }
+      })
+      return defer.promise;
+  }
+  return false;
+}
 
 module.exports.pool = pool;
 module.exports.getUserByEmail = getUserByEmail;

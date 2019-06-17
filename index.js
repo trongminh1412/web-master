@@ -25,7 +25,7 @@ app.use(session({
 }))
 
 //! cấu hình static folder public
-app.use("/static", express.static(__dirname + "/public"));
+app.use("/public", express.static(__dirname + "/public"));
 
 // ! cấu hình để gọi cho router
 const routes = require(__dirname + '/app/routes');
