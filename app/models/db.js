@@ -29,6 +29,7 @@ const getUserByEmail =  function (email){
   }
   return false;
 }
+
 // lấy thông tin user
 const getUser =  function (user){
   if(user){
@@ -48,8 +49,8 @@ const getUser =  function (user){
   return false;
 }
 
+
+
 module.exports.pool = pool;
 module.exports.getUserByEmail = getUserByEmail;
-
-
-
+module.exports.getUser = getUser;

@@ -2,12 +2,17 @@ const express = require('express');
 const session = require('express-session');
 const router = express.Router();
 const helper = require('../helpers/helper');
-const sendEmail = require('../models/email');
 const multer = require('multer');
+const sendEmail = require('../models/email');
+
 // require DATABASE
 const DB = require('../models/db');
 
 
+// require USER and ADMIN
+router.use("/admin", require(__dirname + "/admin"));
+router.use("/user", require(__dirname + "/user"));
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
     DB.pool.query('SELECT * FROM public."user"', (err, res) => {
@@ -72,74 +77,6 @@ router.post("/login", function(req, res){
 
     }
 })
-
-//========================ADMIN====================//
-/* GET home page. */
-router.get('/', function(req, res, next) {
-    DB.pool.query('SELECT * FROM public."user"', (err, res) => {
-        //console.log(res.rows);
-        
-    })
-    if(req.session.user){
-        return res.render('index', { title: 'Trang Chủ', data: req.session.user.name });
-    }
-    return res.render('index', { title: 'Trang Chủ', data: "" });
-});
-
-// ============= đăng nhập
-router.get("/login", function(req, res){
-    if(req.session.user){
-        return res.render('index', { title: 'Trang Chủ', data: req.session.user.name });
-    }
-     res.render("login", { data: "", error: "" } );
-})
-
-// ============= post đăng nhập
-router.post("/login", function(req, res){
-
-    var params = req.body;
-    
-    if(params.email.trim().length == 0){
-
-        res.render("login", { error: "Bạn chưa nhập email", data:""  });
-    }
-    else{
-
-        const getEmail = DB.getUserByEmail(params.email);
-
-        if(getEmail){
-
-            getEmail.then(function(data){
-
-                var user = data.rows[0];
-                
-                // giải mã password
-                var status = helper.compare_password(params.password, user.password);
-
-                if(!status) {
-
-                    res.render("login", { error: "Bạn nhập sai password", data: "" });
-
-                } else {
-
-                    // đẩy thông tin user vào trong session
-                    req.session.user = user;
-                    console.log(user);
-                    console.log( "Session " + req.session.user.name);
-                    // đăng nhập thành công
-                    return res.render("index", { title: 'Trang Chủ', data: req.session.user.name } );
-                }
-            }).catch(function(err) { 
-
-                res.render("login", { error: "Email của bạn sai!!", data: "" });
-
-            })
-        }
-
-    }
-})
-
-
 
 router.get("/exit", function(req, res){
     if(!req.session.user){
@@ -290,5 +227,11 @@ router.get("/loadimage", function(req, res){
     })
 
 })
+
+
+
+
+
+
 
 module.exports = router;

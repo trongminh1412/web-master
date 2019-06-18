@@ -34,6 +34,7 @@
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right" >
+
                     <% if(data) { %>
 
 
@@ -75,7 +76,6 @@
             <p> <%= data.error %> </p>
 
             <% } %>
-
             <form action="/user/signup" method="POST" action="send">
               <div class="form-group">
                 <input type="text" name="username" class="form-control" placeholder="Họ Tên">
@@ -97,7 +97,6 @@
 
           </div>
         </div>
-
       </div>
     </div>
   </div>

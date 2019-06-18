@@ -9,6 +9,7 @@
 <body>
     <div id ="wrapper">
         <div class="Khung"></div>
+        
         <div id="header">
             <nav class="navbar navbar-fixed-top navbar-inverse">
                 <div class="container">
@@ -33,37 +34,38 @@
                             </li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right" >
-                          <% if(data) { %>
+
+                            <% if(data) { %>
 
 
-                          <li>
-                            <a href="/edit" class="navbar-btn navbar-right btn_dn"> <%= data %> </a>
-                        </li>
+                            <li>
+                                <a href="/edit" class="navbar-btn navbar-right btn_dn"> <%= data %> </a>
+                            </li>
 
-                        <% } else { %>
+                            <% } else { %>
 
-                        <li>
-                            <a href="/login" class="navbar-btn navbar-right btn_dn"> Đăng Nhập </a>
-                        </li>
+                            <li>
+                                <a href="/login" class="navbar-btn navbar-right btn_dn"> Đăng Nhập </a>
+                            </li>
 
-                        <% } %> 
+                            <% } %> 
 
-                        <% if(data) { %>
-                        <li>
-                            <a href="/exit" class="navbar-btn navbar-right btn_dn"> Đăng Xuất </a>
-                        </li>
+                            <% if(data) { %>
+                            <li>
+                                <a href="/exit" class="navbar-btn navbar-right btn_dn"> Đăng Xuất </a>
+                            </li>
 
-                        <% } else { %>
-                        <li>
-                            <a href="/user/signup" class="navbar-btn navbar-right btn_dn"> Đăng ký </a>
-                        </li>
-                        <% } %> 
+                            <% } else { %>
+                            <li>
+                                <a href="/user/signup" class="navbar-btn navbar-right btn_dn"> Đăng ký </a>
+                            </li>
+                            <% } %> 
 
-                        </ul>
-                    </div>
+                    </ul>
                 </div>
-            </nav>
-        </div>
+            </div>
+        </nav>
+    </div>
 
     <div class="walpper"></div>
     <div class="PhimNow"> 
@@ -215,8 +217,6 @@
             </div>     
         </div>
 </div>
-    
-
 
 <% include ./layout/footer %>
 
